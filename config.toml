@@ -1,0 +1,230 @@
+# The URL the site will be built for
+base_url = "https://lgrunwald.dev"
+
+theme = "linkita"
+
+default_language = "en"
+
+author = "luca"
+title = "Luca's Paper"
+description = "personal blog and website of luca grunwald"
+generate_feeds = true
+
+
+taxonomies = [
+    { name = "tags", feed = true },
+    { name = "categories", feed = true },
+    { name = "authors", feed = true, paginate_by = 4 },
+]
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+[languages.de]
+title = "Luca's Paper"
+description = "Persönlicher Blog und Homepage von Luca Grunwald"
+generate_feeds = true
+# feed_filenames = ["atom.xml"] # or ["rss.xml"]
+build_search_index = true
+taxonomies = [
+    { name = "tags", feed = true, paginate_by = 4 },
+    { name = "categories", feed = true, paginate_by = 4 },
+    { name = "authors", feed = true, paginate_by = 4 },
+]
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+[extra]
+
+profile = "luca"
+
+# Put all your custom variables here
+# Enable KaTeX math formula support globally.
+# Default value: false
+math = false
+
+# Enable Mermaid support globally.
+# Default value: false
+mermaid = false
+
+# Enable comments globally.
+# Default value: false
+comment = false
+
+# Title separator.
+title_separator = " | "
+
+# The top menu.
+# See "extra.menus".
+header_menu_name = "menu_name"
+
+# If you disable default favicons, you can use
+# the inject support to set your own favicons.
+# Default value: false
+disable_default_favicon = false
+
+# If you want to implement the JS code
+# yourself, set to true and use the inject support.
+# Default value: false
+disable_javascript = false
+
+# Default value: false
+use_cdn = false
+
+# Use relative urls.
+# It doesn't apply for content yet.
+# Default value: false
+relative_urls = false
+
+# If you want to view the site without a webserver
+# set this and "relative_urls" to true.
+# Default value: false
+urls_to_index_html = false
+
+# Prioritize summary over description.
+# Default value: false
+page_summary_on_paginator = false
+
+# Reverse the order of prev and next post links.
+# Default value: false
+invert_page_navigation = false
+
+# You can reorder the strings, remove them, replace them.
+# For example, you can replace "site_title" with "home_button".
+# Default value: ["site_title", "theme_button", "search_button", "translations_button"]
+# header_buttons = []
+
+# Valid "when" values:
+#  "date", "date_updated", "reading_time", "word_count", "authors", "tags", "".
+# The "prepend" and "append" are used when the value of "when" is defined for the page.
+# e.g. [{when="", prepend="Page Info: "},{when="date",prepend="Published on "},{when="authors",prepend="By "}]
+# page_info = [{ when="date" }, { when="date_updated", prepend="(", append=")" }, { when="reading_time" }]
+# page_info_on_paginator = [{ when="date" }, { when="reading_time" }]
+
+# Enable table of contents on all pages.
+# If not set, toc is enabled only on posts.
+# If set to false, toc is disabled on all pages.
+# Type: boolean or object
+# toc = true
+
+
+[extra.style]
+# The custom background color.
+bg_color = "#f4f4f5"
+# The custom background color in dark mode.
+bg_dark_color = "#18181b"
+
+# Enable header blur.
+header_blur = false
+
+# The custom header color, only available
+# when "header_blur" is false.
+header_color = "#e4e4e7"
+# The custom header color in dark mode, only available
+# when "header_blur" is false.
+header_dark_color = "#27272a"
+
+
+[extra.menus]
+menu_name = [
+    { url = "$BASE_URL/blog/", name = "Posts" },
+    { url = "$BASE_URL/categories/", name = "Categories" },
+    { url = "$BASE_URL/tags/", name = "Tags" },
+    { url = "$BASE_URL/about/", name = "About" },
+    { url = "/projects/", name = "Projects" },
+]
+
+# Example multilingual menu.
+multilingual_menu_name = [
+    { url = "$BASE_URL/about/", names = { en = "About", de = "Über mich" } },
+    { url = "$BASE_URL/projects/", names = { en = "Projects", de = "Projekte" } },
+    { url = "$BASE_URL/blog/", names = { en = "Archive", de = "Posts" } },
+    { url = "$BASE_URL/categories/", names = { en = "Categories", de = "Kategorien" } },
+    { url = "$BASE_URL/tags/", names = { en = "Tags", de = "Tags" } },
+    { url = "$BASE_URL/authors/", names = { en = "Authors", de = "Autoren" } },
+]
+
+
+[extra.profiles.luca]
+avatar_url = "/assets/avatar.png"
+avatar_alt = "picture of luca grunwald"
+avatar_invert = false
+name = "Luca Grunwald"
+bio = "bio tbd"
+social = [
+    { name = "github", url = "https://github.com/sirg2" },
+    { name = "linkedin", url = "https://www.linkedin.com/in/luca-grunwald-0a21a81a2?utm_source=https://lgrunwald.dev" },
+    { name = "rss", url = "$BASE_URL/atom.xml" },
+]
+
+[extra.profiles.luca.languages.de]
+avatar_url = "/assets/avatar.png"
+avatar_alt = "Foto von Luca Grunwald"
+avatar_invert = false
+name = "Luca Grunwald"
+bio = "Dies ist meine Bio."
+social = [
+    { name = "github", url = "https://github.com/sirg2" },
+    { name = "linkedin", url = "https://www.linkedin.com/in/luca-grunwald-0a21a81a2?utm_source=https://lgrunwald.dev" },
+    { name = "rss", url = "$BASE_URL/atom.xml" },
+]
+
+
+[extra.profiles.luca.open_graph]
+
+# The URL of social image.
+image = ""
+
+# A description of what is in the social image.
+# Default value: ""
+image_alt = ""
+
+# Your first name. No default value.
+first_name = "Luca"
+# Your last name. No default value.
+last_name = "Grunwald"
+# Your username. No default value.
+username = "luca"
+# e.g. "female" or "male". No default value.
+gender = "male"
+
+# fb_app_id = "Your fb app ID"
+# fb_admins = ["YOUR_USER_ID"]
+
+# Set if you have a Fediverse account.
+#  handle - Your Fediverse handle.
+#  domain - Your Fediverse instance.
+#  url - Your Fediverse account URL. Optional.
+# Example for @me@mastodon.social:
+# { handle = "me", domain = "mastodon.social" }
+fediverse_creator = { handle = "", domain = "" }
+
+[extra.footer]
+# Replace with the correct year.
+# Default value: the current year
+since = 2020
+
+# Replace with the URL of the license you want.
+# No default value. Supports "$BASE_URL".
+# license_url = "https://creativecommons.org/licenses/by-sa/4.0/deed"
+
+# Replace "Your Name" with your name and "CC BY-SA 4.0" with the name of the license you want.
+copyright = "&copy; $YEAR Luca Grunwald &vert; All rights reserved."
+
+# Not used yet.
+# Supports "$BASE_URL".
+# privacy_policy_url = "$BASE_URL/privacy-policy/"
+
+# Not used yet.
+# Supports "$BASE_URL".
+# terms_of_service_url = "$BASE_URL/terms-of-service/"
+
+# Not used yet.
+# Supports "$BASE_URL".
+# search_page_url = "$BASE_URL/search/"
