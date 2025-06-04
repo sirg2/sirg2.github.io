@@ -80,7 +80,7 @@ use_cdn = false
 # Use relative urls.
 # It doesn't apply for content yet.
 # Default value: false
-relative_urls = false
+relative_urls = true
 
 # If you want to view the site without a webserver
 # set this and "relative_urls" to true.
@@ -111,7 +111,7 @@ invert_page_navigation = false
 # If not set, toc is enabled only on posts.
 # If set to false, toc is disabled on all pages.
 # Type: boolean or object
-# toc = true
+toc = false
 
 
 [extra.style]
@@ -121,7 +121,7 @@ bg_color = "#f4f4f5"
 bg_dark_color = "#18181b"
 
 # Enable header blur.
-header_blur = false
+header_blur = true
 
 # The custom header color, only available
 # when "header_blur" is false.
@@ -203,7 +203,7 @@ gender = "male"
 #  url - Your Fediverse account URL. Optional.
 # Example for @me@mastodon.social:
 # { handle = "me", domain = "mastodon.social" }
-fediverse_creator = { handle = "", domain = "" }
+# fediverse_creator = { handle = "", domain = "" }
 
 [extra.footer]
 # Replace with the correct year.
@@ -219,12 +219,12 @@ copyright = "&copy; $YEAR Luca Grunwald &vert; All rights reserved."
 
 # Not used yet.
 # Supports "$BASE_URL".
-# privacy_policy_url = "$BASE_URL/privacy-policy/"
+privacy_policy_url = "$BASE_URL/privacy-policy/"
 
 # Not used yet.
 # Supports "$BASE_URL".
-# terms_of_service_url = "$BASE_URL/terms-of-service/"
+terms_of_service_url = "$BASE_URL/terms-of-service/"
 
 # Not used yet.
 # Supports "$BASE_URL".
-# search_page_url = "$BASE_URL/search/"
+search_page_url = "$BASE_URL/search/"
