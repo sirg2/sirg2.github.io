@@ -4,6 +4,4 @@ description = ""
 path = "about"
 +++
 
-## Hello, world!
-
-{{ gallery() }}
+tbd.
