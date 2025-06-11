@@ -1,8 +1,11 @@
 {% extends "index.html" %}
 {% block head %}
+    {{ super() }} {# Dies stellt sicher, dass alle Inhalte aus dem 'head'-Block des Basis-Templates beibehalten werden #} 
 <script>document.addEventListener('DOMContentLoaded', function () { plausible('404', { props: { path: document.location.pathname } }); });</script>
 {% endblock head %}
+
 {% block main %}
 <h1 class="absolute inset-x-8 bottom-20 top-0 flex items-center justify-center text-6xl">{{
   m_i18n::tr(key=`error_not_found`, lk=g_lang_k, d=g_trans_d) }}</h1>
 {% endblock main %}
+
