@@ -1,6 +1,6 @@
 +++
 title = "Hello World"
-date = 2025-12-30
+date = 2025-06-01
 summary = "abc"
 
 [taxonomies]
