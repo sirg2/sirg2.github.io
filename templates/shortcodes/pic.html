@@ -1,0 +1,55 @@
+{% set image_path = path %} {# This is the path to your original image, e.g., "my-image.jpg" #}
+{% set alt_text = alt | default(value="") %}
+{% set class_name = class | default(value="") %}
+
+{# Bestimme den Pfad zu den Assets, ob Colocated oder Static #}
+{% if page %}
+    {% set base_path = page.colocated_path %}
+{% elif section %}
+    {% set base_path = section.colocated_path %}
+{% else %}
+    {# Annahme: Wenn weder page noch section, ist es ein statisches Asset #}
+    {% set base_path = "" %}
+{% endif %}
+
+{# Originalbild-Metadaten für Breite und Höhe #}
+{% set original_image = get_image_metadata(path=base_path ~ image_path) %}
+
+<picture>
+    {# AVIF-Quelle #}
+    {% set avif_image = resize_image(path=base_path ~ image_path, width=width | default(value=original_image.width), op="fit_width", format="avif", quality=80) %}
+    {% if avif_image %}
+        <source srcset="{{ avif_image.url | safe }}" type="image/avif">
+    {% endif %}
+
+    {# WebP-Quelle #}
+    {% set webp_image = resize_image(path=base_path ~ image_path, width=width | default(value=original_image.width), op="fit_width", format="webp", quality=100) %}
+    {% if webp_image %}
+        <source srcset="{{ webp_image.url | safe }}" type="image/webp">
+    {% endif %}
+
+    {# Fallback-Quelle (Originalformat, z.B. JPEG/PNG) #}
+    {% set fallback_image = resize_image(path=base_path ~ image_path, width=width | default(value=original_image.width), op="fit_width", quality=85) %} {# Zola versucht, das optimale Format basierend auf dem Original zu wählen, oder du gibst es explizit an #}
+    {% if fallback_image %}
+        <img
+            src="{{ fallback_image.url | safe }}"
+            alt="{{ alt_text }}"
+            {% if width %}width="{{ width }}"{% else %}width="{{ original_image.width }}"{% endif %}
+            {% if height %}height="{{ height }}"{% else %}height="{{ original_image.height }}"{% endif %}
+            class="{{ class_name }}"
+            loading="lazy" {# Optional: Für Lazy Loading #}
+        >
+    {% else %}
+        {# Fallback für den Fall, dass resize_image fehlschlägt oder das Original nicht gefunden wird #}
+        <img
+            src="{{ get_url(path=base_path ~ image_path) | safe }}" {# Direkter Link zum Originalbild #}
+            alt="{{ alt_text }}"
+            {% if original_image %}
+                width="{{ original_image.width }}"
+                height="{{ original_image.height }}"
+            {% endif %}
+            class="{{ class_name }}"
+            loading="lazy"
+        >
+    {% endif %}
+</picture>
