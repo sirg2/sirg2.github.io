@@ -39,7 +39,7 @@ taxonomies = [
 
 [markdown.highlighting]
 style = "inline"
-theme = "boron"
+# theme = "boron"
 
 [extra]
 
