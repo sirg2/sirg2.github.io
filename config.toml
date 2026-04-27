@@ -159,7 +159,7 @@ name = "Luca Grunwald"
 bio = "bio tbd"
 social = [
     { name = "github", url = "https://github.com/sirg2" },
-    { name = "linkedin", url = "https://www.linkedin.com/in/luca-grunwald-0a21a81a2?utm_source=https://lgrunwald.dev" },
+    { name = "linkedin", url = "https://linkedin.com/in/luca-grunwald?utm_source=https://lgrunwald.dev" },
     { name = "rss", url = "$BASE_URL/atom.xml" },
 ]
 
