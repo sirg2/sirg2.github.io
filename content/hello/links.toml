@@ -1,0 +1,20 @@
+avatar = "https://example.com/avatar.png"
+bio = "<p>Hi! Ich bin Luca, ein Softwareentwickler mit einer Leidenschaft für großartige digitale Erlebnisse.</p>"
+backgroundImage = "https://example.com/background.jpg"
+
+[[links]]
+name = "Mein GitHub"
+url = "https://github.com/sirg2"
+icon = "https://example.com/github-icon.png"
+description = "Besuche mein GitHub-Profil und entdecke meine Projekte!"
+
+[[links]]
+name = "LinkedIn"
+url = "https://linkedin.com/in/sirg2"
+icon = "https://example.com/linkedin-icon.png"
+description = "Verbinde dich mit mir auf LinkedIn."
+
+[[links]]
+name = "Meine Website"
+url = "https://example.com"
+description = "Schau dir meine persönliche Website an!"
