@@ -1,14 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hello Page Links</title>
+    <title>Digitale Visitenkarte</title>
 </head>
 <body>
-    <h1>Welcome to my LinkTree!</h1>
+    <div style="text-align: center;">
+        <!-- Avatar und Bio -->
+        <img src="{{ .avatar }}" alt="Avatar" style="border-radius: 50%; width: 150px; height: 150px;">
+        <div style="margin: 10px;">
+            {{ .bio | safeHTML }}
+        </div>
+    </div>
+
+    <!-- Links -->
     <ul>
         {{ range .links }}
-        <li><a href="{{ .url }}">{{ .name }}</a></li>
+        <li>
+            <div style="margin-bottom: 15px;">
+                <a href="{{ .url }}" style="text-decoration: none; display: flex; align-items: center;">
+                    <img src="{{ .icon }}" alt="Icon" style="width: 40px; height: 40px; margin-right: 10px;">
+                    <div>
+                        <strong>{{ .name }}</strong>
+                        <div style="font-size: smaller;">{{ .description | safeHTML }}</div>
+                    </div>
+                </a>
+            </div>
+        </li>
         {{ end }}
     </ul>
+
+    <!-- Hintergrundbild (optional) -->
+    <div style="text-align: center; margin-top: 20px;">
+        <img src="{{ .backgroundImage }}" alt="Background" style="max-width: 100%; height: auto;">
+    </div>
 </body>
 </html>
