@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello Page Links</title>
+</head>
+<body>
+    <h1>Welcome to my LinkTree!</h1>
+    <ul>
+        {{ range .links }}
+        <li><a href="{{ .url }}">{{ .name }}</a></li>
+        {{ end }}
+    </ul>
+</body>
+</html>
