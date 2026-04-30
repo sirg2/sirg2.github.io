@@ -1,37 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digitale Visitenkarte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            box-sizing: border-box;
+        }
+
+        .card {
+            width: 90%;
+            max-width: 1200px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .avatar {
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .bio {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+
+        .link-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .link-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .link-item a {
+            text-decoration: none;
+            color: #0078d7;
+            font-size: 1.1em;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .link-item img.icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+        }
+
+        .link-item .link-description {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .background-img {
+            margin-top: 20px;
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .link-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div style="text-align: center;">
+    <div class="card">
         <!-- Avatar und Bio -->
-        <img src="{{ .avatar }}" alt="Avatar" style="border-radius: 50%; width: 150px; height: 150px;">
-        <div style="margin: 10px;">
+        {{ if .avatar }}
+        <img src="{{ .avatar }}" alt="Avatar" class="avatar">
+        {{ end }}
+        {{ if .bio }}
+        <div class="bio">
             {{ .bio | safeHTML }}
         </div>
-    </div>
-
-    <!-- Links -->
-    <ul>
-        {{ range .links }}
-        <li>
-            <div style="margin-bottom: 15px;">
-                <a href="{{ .url }}" style="text-decoration: none; display: flex; align-items: center;">
-                    <img src="{{ .icon }}" alt="Icon" style="width: 40px; height: 40px; margin-right: 10px;">
-                    <div>
-                        <strong>{{ .name }}</strong>
-                        <div style="font-size: smaller;">{{ .description | safeHTML }}</div>
-                    </div>
-                </a>
-            </div>
-        </li>
         {{ end }}
-    </ul>
 
-    <!-- Hintergrundbild (optional) -->
-    <div style="text-align: center; margin-top: 20px;">
-        <img src="{{ .backgroundImage }}" alt="Background" style="max-width: 100%; height: auto;">
+        <!-- Links -->
+        <ul class="link-list">
+            {{ range .links }}
+            <li class="link-item">
+                {{ if .icon }}<img src="{{ .icon }}" alt="Icon" class="icon">{{ end }}
+                <div>
+                    <a href="{{ .url }}">{{ .name }}</a>
+                    {{ if .description }}<div class="link-description">{{ .description | safeHTML }}</div>{{ end }}
+                </div>
+            </li>
+            {{ end }}
+        </ul>
+
+        <!-- Hintergrundbild (optional) -->
+        {{ if .backgroundImage }}
+        <img src="{{ .backgroundImage }}" alt="Background" class="background-img">
+        {{ end }}
     </div>
 </body>
 </html>
