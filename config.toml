@@ -163,7 +163,7 @@ social = [
     { name = "github", url = "https://github.com/sirg2" },
     { name = "linkedin", url = "https://linkedin.com/in/luca-grunwald?utm_source=https://lgrunwald.dev" },
     { name = "rss", url = "$BASE_URL/atom.xml" },
-    { name = "mastodon", url = "https://mastodon.social/@lgrunwald?ref=me" },
+    { name = "mastodon", url = "https://mastodon.social/@lgrunwald" },
    
 ]
 
