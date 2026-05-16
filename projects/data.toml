@@ -1,0 +1,7 @@
+[[project]]
+name = "Homepage"
+desc = "My own personal blog and homepage ;)"
+tags = ["blog", "homepage", "zola"]
+links = [
+    { name = "homepage", url = "https://lgrunwald.dev" }
+]
