@@ -23,14 +23,15 @@ link = "/go/linkedin"
 # description weggelassen -> Tera rendert die Karte automatisch kompakter
 icon = "💼"
 
-[[extra.links]]
-name = "Kontakt Speichern (vCard)"
-link = "/downloads/kontakt.vcf"
-description = "Direkt ins Adressbuch importieren"
-icon = "📥"
+# [[extra.links]]
+# name = "Kontakt Speichern (vCard)"
+# link = "/downloads/kontakt.vcf"
+# description = "Direkt ins Adressbuch importieren"
+# icon = "📥"
 
 [[extra.links]]
 name = "GitHub"
 link = "/go/github"
 icon = "💻"
+description = "See my github profile"
 +++
