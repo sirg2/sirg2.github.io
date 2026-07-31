@@ -9,6 +9,7 @@ author = "luca"
 title = "Luca's Paper"
 description = "personal blog and website of luca grunwald"
 generate_feeds = true
+feed_filenames = ["atom.xml", "rss.xml"]
 
 
 taxonomies = [
@@ -27,7 +28,7 @@ build_search_index = true
 title = "Luca's Paper"
 description = "Persönlicher Blog und Homepage von Luca Grunwald"
 generate_feeds = true
-# feed_filenames = ["atom.xml"] # or ["rss.xml"]
+feed_filenames = ["atom.xml", "rss.xml"]
 build_search_index = true
 taxonomies = [
     { name = "tags", feed = true, paginate_by = 4 },
@@ -160,10 +161,10 @@ avatar_invert = false
 name = "Luca Grunwald"
 bio = "bio tbd"
 social = [
-    { name = "github", url = "https://github.com/sirg2" },
     { name = "linkedin", url = "https://linkedin.com/in/luca-grunwald?utm_source=https://lgrunwald.dev" },
-    { name = "rss", url = "$BASE_URL/atom.xml" },
+    { name = "github", url = "https://github.com/sirg2" },
     { name = "mastodon", url = "https://mastodon.social/@lgrunwald" },
+    { name = "rss", url = "$BASE_URL/atom.xml" },
    
 ]
 
@@ -174,8 +175,9 @@ avatar_invert = false
 name = "Luca Grunwald"
 bio = "Dies ist meine Bio."
 social = [
-    { name = "github", url = "https://github.com/sirg2" },
     { name = "linkedin", url = "https://www.linkedin.com/in/luca-grunwald-0a21a81a2?utm_source=https://lgrunwald.dev" },
+    { name = "github", url = "https://github.com/sirg2" },
+    { name = "mastodon", url = "https://mastodon.social/@lgrunwald" },
     { name = "rss", url = "$BASE_URL/atom.xml" },
 ]
 
@@ -223,12 +225,12 @@ copyright = "&copy; $YEAR Luca Grunwald &vert; All rights reserved."
 
 # Not used yet.
 # Supports "$BASE_URL".
-privacy_policy_url = "$BASE_URL/privacy-policy/"
+# privacy_policy_url = "$BASE_URL/privacy-policy/"
 
 # Not used yet.
 # Supports "$BASE_URL".
-terms_of_service_url = "$BASE_URL/terms-of-service/"
+# terms_of_service_url = "$BASE_URL/terms-of-service/"
 
 # Not used yet.
 # Supports "$BASE_URL".
-search_page_url = "$BASE_URL/search/"
+# search_page_url = "$BASE_URL/search/"
