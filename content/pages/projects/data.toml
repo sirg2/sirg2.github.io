@@ -5,3 +5,12 @@ tags = ["blog", "homepage", "zola"]
 links = [
     { name = "homepage", url = "https://lgrunwald.dev" }
 ]
+
+[[project]]
+name = "Bachelor Thesis"
+desc = "Graphgestütze C-nach-Rust-Migration - ein teilautomatisierter Ansatz für industrielle Software"
+tags = ["research", "rust", "agentic-ai"]
+links = [
+    { name = "see Blog Post", url = "/blog/agentic-c-to-rust" }
+]
+

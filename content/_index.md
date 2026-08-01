@@ -30,6 +30,5 @@ I am a dual computer science student currently exploring the intersection of emb
 
 ### 📫 How to reach me
 
-- 🌐 **Website / Blog:** [lgrunwald.dev/hello](https://lgrunwald.dev/hello)
 - 💼 **LinkedIn:** [Let's connect on LinkedIn!](https://lgrunwald.dev/go/linkedin?utm_source=github&utm_medium=profile_readme&utm_campaign=social_links)
 

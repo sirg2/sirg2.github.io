@@ -38,10 +38,17 @@ taxonomies = [
 
 [markdown]
 
+render_emoji = true
+smart_punctuation = true
+github_alerts = true
+
 [markdown.highlighting]
 style = "inline"
 light_theme = "github-light"                                                                                     
 dark_theme = "github-dark"
+error_on_missing_language = true
+
+[link_checker]
 
 [extra]
 
@@ -65,7 +72,8 @@ title_separator = " | "
 
 # The top menu.
 # See "extra.menus".
-header_menu_name = "menu_name"
+# header_menu_name = "menu_name"
+header_menu_name = "multilingual_menu_name"
 
 # If you disable default favicons, you can use
 # the inject support to set your own favicons.
@@ -139,18 +147,18 @@ menu_name = [
     { url = "$BASE_URL/blog/", name = "Posts" },
     { url = "$BASE_URL/categories/", name = "Categories" },
     { url = "$BASE_URL/tags/", name = "Tags" },
-    { url = "$BASE_URL/about/", name = "About" },
-    { url = "/projects/", name = "Projects" },
+    # { url = "$BASE_URL/about/", name = "About" },
+    # { url = "/projects/", name = "Projects" },
 ]
 
 # Example multilingual menu.
 multilingual_menu_name = [
-    { url = "$BASE_URL/about/", names = { en = "About", de = "Über mich" } },
-    { url = "$BASE_URL/projects/", names = { en = "Projects", de = "Projekte" } },
-    { url = "$BASE_URL/blog/", names = { en = "Archive", de = "Posts" } },
+    { url = "$BASE_URL/about/", names = { en = "About me", de = "Über mich" } },
+    # { url = "$BASE_URL/projects/", names = { en = "Projects", de = "Projekte" } },
+    { url = "$BASE_URL/blog/", names = { en = "Posts Archive", de = "Blog Beiträge" } },
     { url = "$BASE_URL/categories/", names = { en = "Categories", de = "Kategorien" } },
     { url = "$BASE_URL/tags/", names = { en = "Tags", de = "Tags" } },
-    { url = "$BASE_URL/authors/", names = { en = "Authors", de = "Autoren" } },
+    # { url = "$BASE_URL/authors/", names = { en = "Authors", de = "Autoren" } },
 ]
 
 
@@ -159,7 +167,7 @@ avatar_url = "/assets/avatar.png"
 avatar_alt = "picture of luca grunwald"
 avatar_invert = false
 name = "Luca Grunwald"
-bio = "bio tbd"
+bio = "Dual Student @ Siemens Mobility | Fan of Rust and Linux | Tech Nerd"
 social = [
     { name = "linkedin", url = "https://linkedin.com/in/luca-grunwald?utm_source=https://lgrunwald.dev" },
     { name = "github", url = "https://github.com/sirg2" },
@@ -173,7 +181,7 @@ avatar_url = "/assets/avatar.png"
 avatar_alt = "Foto von Luca Grunwald"
 avatar_invert = false
 name = "Luca Grunwald"
-bio = "Dies ist meine Bio."
+bio = "Dualer Student @ Siemens Mobility"
 social = [
     { name = "linkedin", url = "https://www.linkedin.com/in/luca-grunwald-0a21a81a2?utm_source=https://lgrunwald.dev" },
     { name = "github", url = "https://github.com/sirg2" },
