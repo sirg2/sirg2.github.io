@@ -1,6 +1,16 @@
 <script defer data-domain="lgrunwald.dev"
     src="https://plausible.lgrunwald.dev/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"></script>
-<script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+<script>
+  window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments) };
+  const user_language = document.documentElement.lang || navigator.language || 'unkown';
+  const theme = localStorage.getItem("theme-color-scheme");
+  plausible('pageview', {
+    props: {
+      language: user_language,
+      theme: theme
+    }
+  });
+</script>
 
 <!-- Mastodon verification -->
 <link href="https://mastodon.social/@lgrunwald" rel="me">
