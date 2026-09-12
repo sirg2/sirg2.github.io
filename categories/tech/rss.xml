@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>Luca&#x27;s Paper - tech</title>
+      <link>https://lgrunwald.dev</link>
+      <description>personal blog and website of luca grunwald</description>
+      <generator>Zola</generator>
+      <language>en</language>
+      <atom:link href="https://lgrunwald.dev/categories/tech/rss.xml" rel="self" type="application/rss+xml"/>
+      <lastBuildDate>Sun, 01 Jun 2025 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Hello World</title>
+          <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+          <author>luca</author>
+          <link>https://lgrunwald.dev/blog/hello/</link>
+          <guid>https://lgrunwald.dev/blog/hello/</guid>
+          <description xml:base="https://lgrunwald.dev/blog/hello/">&lt;p&gt;This is my first ever blog post.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;hello-world&quot;&gt;Hello, world!&lt;&#x2F;h2&gt;
+</description>
+      </item>
+    </channel>
+</rss>
