@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+      <title>Luca&#x27;s Paper</title>
+      <link>https://lgrunwald.dev</link>
+      <description>Persönlicher Blog und Homepage von Luca Grunwald</description>
+      <generator>Zola</generator>
+      <language>de</language>
+      <atom:link href="https://lgrunwald.dev/de/rss.xml" rel="self" type="application/rss+xml"/>
+      
+    </channel>
+</rss>
