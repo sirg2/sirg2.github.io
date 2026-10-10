@@ -1,0 +1,59 @@
+<html class="h-full dark" lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plausible Analytics · Exclusion</title>
+<link rel="stylesheet" type="text/css" href="exclusion.css">
+</head>
+
+<body class="flex flex-col items-center bg-gray-100 dark:bg-gray-900 h-full">
+	<div class="mt-24 text-center container">
+		<h1 class="font-black dark:text-gray-100 text-5xl">Plausible Exclude</h1>
+		<div class="my-4 dark:text-gray-100 text-xl">Click the button below to toggle your exclusion in analytics for this
+			site</div>
+		<div class="my-4 dark:text-gray-100 text-xl">You currently <span class="font-bold text-red-600 dark:text-red-400"
+				id="plausible_not">are not</span><span class="hidden font-bold text-green-600 dark:text-green-400" id="plausible_yes">are</span>
+			excluding your visits.</div>
+		<a class="bg-indigo-600 hover:bg-indigo-700 shadow-md px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-indigo-200 w-full font-semibold text-white text-base text-center transition duration-200 ease-in"
+			id="plausible_button" href="javascript:toggleExclusion()">Exclude my visits</a>
+	</div>
+
+	<div class="my-4 text-center container">
+		<a href="/" class="bg-indigo-600 hover:bg-indigo-700 shadow-md px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-indigo-200 w-full font-semibold text-white text-base text-center transition duration-200 ease-in">Go back to homepage.</a>
+	</div>
+
+	<script>
+		window.addEventListener('load', function (e) {
+			var exclusionState = window.localStorage.plausible_ignore == "true"
+
+			if (exclusionState) {
+				document.getElementById("plausible_not").classList.add('hidden')
+				document.getElementById("plausible_yes").classList.remove('hidden')
+				document.getElementById("plausible_button").innerHTML = 'Stop excluding my visits'
+			} else {
+				document.getElementById("plausible_yes").classList.add('hidden')
+				document.getElementById("plausible_not").classList.remove('hidden')
+				document.getElementById("plausible_button").innerHTML = 'Exclude my visits'
+			}
+		});
+
+		function toggleExclusion(e) {
+			var exclusionState = window.localStorage.plausible_ignore == "true"
+
+			if (exclusionState) {
+				delete window.localStorage.plausible_ignore
+				document.getElementById("plausible_yes").classList.add('hidden')
+				document.getElementById("plausible_not").classList.remove('hidden')
+				document.getElementById("plausible_button").innerHTML = 'Exclude my visits'
+			} else {
+				window.localStorage.plausible_ignore = "true"
+				document.getElementById("plausible_not").classList.add('hidden')
+				document.getElementById("plausible_yes").classList.remove('hidden')
+				document.getElementById("plausible_button").innerHTML = 'Stop excluding my visits'
+			}
+		}
+	</script>
+</body>
+
+</html>
